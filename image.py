@@ -2,8 +2,8 @@ from PIL import Image
 import os
 
 # 이미지 폴더 경로 설정
-input_folder = 'ori'  # 원본 이미지들이 있는 폴더 경로
-output_folder = 'frame'  # 결과물이 저장될 폴더 경로
+input_folder = './ori'  # 원본 이미지들이 있는 폴더 경로
+output_folder = './frame'  # 결과물이 저장될 폴더 경로
 
 # 프레임의 크기 설정 (6400x6400 픽셀)
 frame_size = (6400, 6400)
@@ -14,7 +14,7 @@ if not os.path.exists(output_folder):
 
 # 이미지 파일 일괄 처리
 for filename in os.listdir(input_folder):
-    if filename.endswith(('.png', '.jpg', '.jpeg')):  # 지원하는 이미지 포맷
+    if filename.endswith(('.png', '.jpg', '.jpeg', '.PNG', '.JPG', '.JPEG')):  # 지원하는 이미지 포맷
         img_path = os.path.join(input_folder, filename)
         img = Image.open(img_path)
 
